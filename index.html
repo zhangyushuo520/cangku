@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>你好</title>
-    
 </head>
+
 <body>
     <script>
-        var name = prompt("What's your name?");
-        alert("你好"+name)
+        const isWeChatBrowser = /MicroMessenger/i.test(navigator.userAgent);
+        if (isWeChatBrowser) {
+            alert('请在浏览器中打开此页面。');
+            // 或者可以重定向到一个提示页面
+            //window.location.href = 'your_redirect_page.html';
+        } else {
+            alert("Please open it in the browser.");
+            var name = prompt("What's your name?");
+            alert("你好" + name);
+        }
     </script>
 </body>
+
 </html>
